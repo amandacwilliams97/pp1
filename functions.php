@@ -41,8 +41,16 @@ function distribution($arrayItems) {
      */
     ksort($assocArray, SORT_STRING);
     $arrayString="";
+    reset($assocArray);
+    $firstKey = key($assocArray);
+
     foreach ($assocArray as $item => $value) {
-        $arrayString.= "$item=>$value, ";
+        if(!($firstKey==$item)) {
+            $arrayString.= ", $item=>$value";
+        }
+        else {
+            $arrayString.= "$item=>$value";
+        }
     }
 
     return '['.$arrayString.']';
