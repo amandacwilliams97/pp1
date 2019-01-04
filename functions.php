@@ -17,3 +17,11 @@ function largest($arrayItems) {
     }
     return $initialLargest;
 }
+
+function average($arrayItems) {
+    $total =0;
+    foreach ($arrayItems as $item) {
+        $total += $item;
+    }
+    return $total/count($arrayItems);
+}
