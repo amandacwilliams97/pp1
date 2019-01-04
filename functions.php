@@ -7,7 +7,7 @@
  */
 function printArray($arrayItems){
     $itemsString = implode($arrayItems, ', ');
-    echo "$itemsString";
+    echo "<br>($itemsString)";
 }
 
 function largest($arrayItems) {
@@ -27,5 +27,23 @@ function average($arrayItems) {
 }
 
 function removeDups($arrayItems) {
-    return array_unique($arrayItems);
+    $newArray = array_unique($arrayItems);
+    return '('.implode($newArray, ', ').')';
+}
+
+function distribution($arrayItems) {
+    $assocArray = array_count_values($arrayItems);
+    $test = array(6=>1, 7=>1, 8=>3, 9=>2);
+    /*
+     * foreach ($fruits as $key => $val) {
+            echo "$key = $val\n";
+        }
+     */
+    ksort($assocArray, SORT_STRING);
+    $arrayString="";
+    foreach ($assocArray as $item => $value) {
+        $arrayString.= "$item=>$value, ";
+    }
+
+    return '['.$arrayString.']';
 }
