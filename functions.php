@@ -33,12 +33,6 @@ function removeDups($arrayItems) {
 
 function distribution($arrayItems) {
     $assocArray = array_count_values($arrayItems);
-    $test = array(6=>1, 7=>1, 8=>3, 9=>2);
-    /*
-     * foreach ($fruits as $key => $val) {
-            echo "$key = $val\n";
-        }
-     */
     ksort($assocArray, SORT_STRING);
     $arrayString="";
     reset($assocArray);
