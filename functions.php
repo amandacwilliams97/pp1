@@ -6,8 +6,8 @@
  * Time: 10:36 AM
  */
 function printArray($arrayItems){
-    $arrayItems = implode($arrayItems, ', ');
-    echo "$arrayItems";
+    $itemsString = implode($arrayItems, ', ');
+    echo "$itemsString";
 }
 
 function largest($arrayItems) {
@@ -24,4 +24,8 @@ function average($arrayItems) {
         $total += $item;
     }
     return $total/count($arrayItems);
+}
+
+function removeDups($arrayItems) {
+    return array_unique($arrayItems);
 }
